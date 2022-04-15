@@ -17,7 +17,7 @@ int main()
 	cout << "My Name: Wyatt Bussell" << endl;
 	cout << "-------------------------------------------------------------" << endl;
 
-	Roster classRoster;
+	//Roster classRoster;
 	Student bob;
 	bob.set_degreeProgram(DegreeProgram::NETWORK);
 	bob.set_numDaysToComplete(23, 2, 15);

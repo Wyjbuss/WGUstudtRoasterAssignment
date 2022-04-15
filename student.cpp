@@ -37,7 +37,7 @@ Student::Student(
 	email = Nemail;
 	degreeProgram = NdegreeProgram;
 	age = Nage;
-	numDaysToCompleteEachCourse[3] = NnumDaysToCompleteEachCourse[3];
+	numDaysToCompleteEachCourse[2] = NnumDaysToCompleteEachCourse[2];
 }
 void Student::print()
 {
@@ -45,8 +45,16 @@ void Student::print()
 	std::cout << "First Name: " <<firstName << "    ";
 	std::cout << "Last Name: " <<lastName << "    ";
 	std::cout << "Age: " << age << "    ";
-	std::cout << "daysInCourse: " << numDaysToCompleteEachCourse << std::endl;
-	std::cout << "Degree Program: " << &degreeProgram << std::endl;
+	std::cout << "daysInCourse: {" << numDaysToCompleteEachCourse[0] << ", " <<
+		numDaysToCompleteEachCourse[1]<<", " <<numDaysToCompleteEachCourse[2] << "}    ";
+	std::cout << "DegreeProgram: ";
+	switch (degreeProgram)
+	{
+		case DegreeProgram::SECURITY :	std::cout << "SECURITY"; break;
+		case DegreeProgram::NETWORK:	std::cout << "NETWORK"; break;
+		case DegreeProgram::SOFTWARE:	std::cout << "SOFTWARE"; break;
+	}
+	
 	
 	
 }
@@ -74,7 +82,7 @@ void Student::set_email(std::string nEmail)
 void Student::set_degreeProgram(DegreeProgram nDegreeProgram)
 {
 	// this may relate to the enum in degree
-	degreeProgram = nDegreeProgram;
+	DegreeProgram degreeProgram = nDegreeProgram;
 }
 
 void Student::set_name( int nAge)
@@ -87,9 +95,9 @@ void Student::set_numDaysToComplete(int daysInCourse1, int daysInCourse2, int da
 	numDaysToCompleteEachCourse[0] = daysInCourse1;
 	numDaysToCompleteEachCourse[1] = daysInCourse2;
 	numDaysToCompleteEachCourse[2] = daysInCourse3;
-	std::cout << numDaysToCompleteEachCourse[0];
-	std::cout << numDaysToCompleteEachCourse[1];
-	std::cout << numDaysToCompleteEachCourse[2];
+	std::cout << numDaysToCompleteEachCourse[0] << " ";
+	std::cout << numDaysToCompleteEachCourse[1]<<" ";
+	std::cout << numDaysToCompleteEachCourse[2]<<" ";
 }
 
 
